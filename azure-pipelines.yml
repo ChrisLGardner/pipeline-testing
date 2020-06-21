@@ -19,6 +19,6 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     steps:
-      - script: |
+      - powershell: |
           ls env:\
         displayName: 'Get environment variables'
