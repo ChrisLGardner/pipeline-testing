@@ -6,10 +6,19 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
 
-steps:
-- script: |
-    printenv
-  displayName: 'Run a multi-line script'
+jobs:
+  - job: "ubuntu"
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - script: |
+          printenv
+        displayName: 'Get environment variables'
+  - job: "windows"
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - powershell: |
+          ls env:\
+        displayName: 'Get environment variables'
