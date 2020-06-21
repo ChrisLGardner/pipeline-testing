@@ -8,14 +8,14 @@ trigger:
 
 
 jobs:
-  job: ubuntu
+  - job: ubuntu
     pool:
       vmImage: 'ubuntu-latest'
     steps:
       - script: |
           printenv
         displayName: 'Get environment variables'
-  job: windows
+  - job: windows
     pool:
       vmImage: 'windows-latest'
     steps:
